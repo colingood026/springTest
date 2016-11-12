@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN' 'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper
+	namespace='org.colin.demo.mappers.RoleMapper'>
+
+	<resultMap type='Role' id='Role'>
+		<id property='id' column='id' />
+		<result property='roleCode' column='role_code' />
+		<result property='roleNm' column='role_name' />
+	</resultMap>
+	
+	<select id='selectAll' resultMap="Role">
+		select * from ROLE		
+	</select>
+	
+<!-- 	<select id="selectByDLPAndEventDate" resultMap="DLPAccount"> -->
+<!-- 		select top 1 * from DLP_ACCOUNT_DEF  -->
+<!-- 		where DLP = #{dlp} and (#{eventDate} between START_TIME and END_TIME) -->
+<!-- 		order by END_TIME desc -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="selectByDlp" resultType="hashmap"> -->
+<!-- 		select * from DLP_ACCOUNT_DEF dlp  -->
+<!-- 		left join PUB_EMPLOYEE emp  -->
+<!-- 		on dlp.modified_user = emp.CN  -->
+<!-- 		and emp.IS_OPEN = 'T'  -->
+<!-- 		and #{today} between emp.CREATED_DATE and emp.MODIFIED_DATE -->
+<!-- 		<if test="dlp != null"> where dlp.DLP like #{dlp}</if>		 -->
+<!-- 	</select> -->
+	
+<!-- 	<insert id="insertSingleDLP"> -->
+<!-- 		insert into DLP_ACCOUNT_DEF (DLP, EMPLOYEE_ID, START_TIME, END_TIME, CREATED_USER, CREATED_TIME, MODIFIED_USER, MODIFIED_DATE) values (#{dlpAccount.dlp}, #{dlpAccount.employeeId}, #{dlpAccount.startTime}, #{dlpAccount.endTime}, #{dlpAccount.createdUser}, getdate(), #{dlpAccount.modifiedUser},getdate()) -->
+<!-- 	</insert> -->
+
+<!-- 	<delete id="deleteDLPById"> -->
+<!-- 		delete from DLP_ACCOUNT_DEF where ID = #{id} -->
+<!-- 	</delete> -->
+	
+<!-- 	<update id="updateDLP"> -->
+<!-- 		update DLP_ACCOUNT_DEF  -->
+<!-- 		set DLP=#{dlpAccount.dlp},  -->
+<!-- 		EMPLOYEE_ID=#{dlpAccount.employeeId},  -->
+<!-- 		START_TIME=#{dlpAccount.startTime},  -->
+<!-- 		END_TIME=#{dlpAccount.endTime}, -->
+<!-- 		modified_user=#{dlpAccount.modifiedUser}, -->
+<!-- 		modified_date= getdate() -->
+<!-- 		where ID=#{dlpAccount.id} -->
+	
+<!-- 	</update> -->
+
+
+
+</mapper>
