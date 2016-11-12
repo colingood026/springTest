@@ -10,8 +10,9 @@
 	<context:component-scan base-package="org.colin.demo" />
 	<context:annotation-config />
 	<!-- 靜態資源配置 不會被spring mvc攔截，像是js,css -->
-<!-- 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" /> -->
-<!-- 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" /> -->
+	<!-- 使用junit test時下面兩句似乎會有問題 -->
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
 	<!-- 視圖解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
