@@ -7,8 +7,16 @@
 
 	<!-- http 元素是用于定义 Web 相关权限控制的。 -->
 	<security:http auto-config="true" use-expressions="false">
+		<!-- 指定登入頁面 -->
+		<security:form-login login-page="/login.jsp"/>
+		<!-- 燈入夜面的權限，所有人都可以讀取 -->
+		<security:intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<security:intercept-url pattern="/**" access="ROLE_USER" />
+		<!-- 關閉csrf，重要!! -->
+		<security:csrf disabled="true"/>
 	</security:http>
+	
+   
 	<!--  
 	AuthenticationManager 用于认证
 	authentication-manager 元素指定了一个 AuthenticationManager，
